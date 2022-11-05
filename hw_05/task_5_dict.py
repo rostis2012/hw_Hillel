@@ -28,22 +28,19 @@ def task_1():
     tuple_dict = (dict_a, dict_b, dict_c)
     for item in tuple_dict:
         res.update(item)
-    # print(res)
     return res
 
 
 def task_2():
     print(f'Task #2')
     res = dict(zip(dict_a.keys(), dict_b.values()))
-    print(f'res = {res}')
-    return
+    return res
 
 
 def task_3():
     print(f'Task #3')
     res = dict(zip(dict_b.values(), dict_a.keys()))
-    print(f'res = {res}')
-    return
+    return res
 
 
 def task_4(res_task_1):
@@ -52,11 +49,10 @@ def task_4(res_task_1):
     # res_temp.update(res_task_1) # Как правильнее? Сразу подставить res_task_1 в цикл фор или создавать временный словарь? или цикл при каждой итерации будет вызывать функцию task_1?
     res = {}
     for item, values in res_task_1.items():
-        if int(item[-1]) % 2 != 0:
+        if int(values.split('_')[-1]) % 2:
             res.setdefault(item, values)
-    print(f'res = {res}')
     # res_temp.clear()
-    return
+    return res
 
 
 def task_5_1():  # через словарь в словаре
@@ -76,8 +72,7 @@ def task_5_1():  # через словарь в словаре
             if res.get('dict_a', 0) == 0:
                 res.setdefault('dict_b', _count_b)
             res['dict_b'] = _count_b
-    print(f'res = {res}')
-    return
+    return res
 
 
 def task_5_2():  # через set
@@ -86,14 +81,13 @@ def task_5_2():  # через set
     set_b = set(dict_b.items())
     set_c = set(dict_c.items())
     res = {'dict_a': len(set_a & set_c), 'dict_b': len(set_b & set_c)}
-    print(f'res = {res}')
-    return
+    return res
 
 
 print(f'Task #1')
-print(f'res = {task_1()}')
-task_2()
-task_3()
-task_4(task_1())
-task_5_1()
-task_5_2()
+print(f'res = {task_1()}\n')
+print(f'res = {task_2()}\n')
+print(f'res = {task_3()}\n')
+print(f'res = {task_4(task_1())}\n')
+print(f'res = {task_5_1()}\n')
+print(f'res = {task_5_2()}')

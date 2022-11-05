@@ -14,10 +14,7 @@ def task_2():
     res_a_b = set_a - set_b
     res_b_c = set_b - set_c
     res_a_c = set_a - set_c
-    print(f'res_a_b = {res_a_b}')
-    print(f'res_b_c = {res_b_c}')
-    print(f'res_a_c = {res_a_c}')
-    return
+    return (f'res_a_b = {res_a_b}\nres_b_c = {res_b_c}\nres_a_c = {res_a_c}')
 
 
 # task_3
@@ -25,10 +22,7 @@ def task_3():
     res_a_b = set_a & set_b
     res_b_c = set_b & set_c
     res_a_c = set_a & set_c
-    print(f'res_a_b = {res_a_b}')
-    print(f'res_b_c = {res_b_c}')
-    print(f'res_a_c = {res_a_c}')
-    return
+    return (f'res_a_b = {res_a_b}\nres_b_c = {res_b_c}\nres_a_c = {res_a_c}')
 
 
 # task_4
@@ -40,8 +34,7 @@ def task_4():
             print(f'set {set_target} є підмножиною {item} {new_dict.get(item)}')
         else:
             print(f'set {set_target} НЕ є підмножиною {item} {new_dict.get(item)}')
-    return
-
+#чесно кажучи я так і не знайшов як інакше вивести на принт ці дані.
 
 # Task_5
 def task_5():
@@ -53,17 +46,12 @@ def task_5():
             res_2.add(item)
         else:
             res_1.add(item)
-    print(f'res_1 = {res_1}')
-    print(f'res_2 = {res_2}')
-    return
+    return (f'res_1 = {res_1}\nres_2 = {res_2}')
 
 
 print(f'Task #1 \nres= {task_1()}')
-print(f'\nTask #2')
-task_2()
-print(f'\nTask #3')
-task_3()
-print(f'\nTask #4')
-task_4()
-print(f'\nTask #5')
-task_5()
+print(f'\nTask #2\n{(task_2())}')
+print(f'\nTask #3\n{task_3()}')
+print(f'\nTask #4'), task_4()
+print(f'\nTask #5\n{task_5()}')
+
