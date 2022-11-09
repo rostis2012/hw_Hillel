@@ -128,21 +128,23 @@ print(list(range(20, 10)) == my_range(20, 10))
 
 # Task_8
 print(f'Map')
-
-
 def my_map(func, *args):
     res = []
-    if len(args) == 1:
-        for obj in args:
-            for item in obj:
-                t = func(item)
-                res.append(t)
-        return res
+    count_item = len(args)
+    min_len_obj = float('inf')
     for obj in args:
-        res.append(list(obj))
-    return func(res)
-
+        if len(obj) < min_len_obj:
+            min_len_obj = len(obj)
+    for x in range(min_len_obj):
+        if count_item > 1:
+            temp_res = []
+            for item in args:
+                temp_res.append(item[x])
+            res.append(func(temp_res))
+        else:
+            for item in args:
+                res.append(func(item[x]))
+    return res
 
 print(list(map(int, '1234567890')) == my_map(int, '1234567890'))
-print(list(map(min, range(10), range(20, 30), range(25, 15, -1))) == my_map(min, range(10), range(20, 30),
-                                                                            range(25, 15, -1)))
+print(list(map(min, range(10), range(20, 30), range(25, 15, -1))) == my_map(min, range(10), range(20, 30), range(25, 15, -1)))
