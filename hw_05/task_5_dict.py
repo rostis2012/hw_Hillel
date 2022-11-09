@@ -50,8 +50,7 @@ def task_4(res_task_1):
     res = {}
     for item, values in res_task_1.items():
         if int(values.split('_')[-1]) % 2:
-            res.setdefault(item, values)
-    # res_temp.clear()
+            res.update({item: values})
     return res
 
 
@@ -65,12 +64,12 @@ def task_5_1():  # через словарь в словаре
         if name_dict.get('dict_a').get(key, 0) and name_dict.get('dict_a').get(key, 0) == value:
             _count_a += 1
             if res.get('dict_a', 0) == 0:
-                res.setdefault('dict_a', _count_a)
+                res.update({'dict_a': _count_a})
             res['dict_a'] = _count_a
         if name_dict.get('dict_b').get(key, 0) and name_dict.get('dict_b').get(key, 0) == value:
             _count_b += 1
             if res.get('dict_a', 0) == 0:
-                res.setdefault('dict_b', _count_b)
+                res.update({'dict_b': _count_b})
             res['dict_b'] = _count_b
     return res
 

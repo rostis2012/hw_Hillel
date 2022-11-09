@@ -33,12 +33,8 @@ def task_4():
     for item in new_dict:
         if set_target < new_dict.get(item):
             print(f'set {set_target} є підмножиною {item} {new_dict.get(item)}')
-            #_new_list.append(f'set {set_target} є підмножиною {item} {new_dict.get(item)}')
         else:
             print(f'set {set_target} НЕ є підмножиною {item} {new_dict.get(item)}')
-            #_new_list.append(f'set {set_target} НЕ є підмножиною {item} {new_dict.get(item)}')
-#чесно кажучи я так і не знайшов як інакше вивести на принт ці дані.
-#    return _new_list
 
 # Task_5
 def task_5():
@@ -58,4 +54,3 @@ print(f'\nTask #2\n{(task_2())}')
 print(f'\nTask #3\n{task_3()}')
 print(f'\nTask #4'), task_4()
 print(f'\nTask #5\n{task_5()}')
-#print([i for i in task_4()])
