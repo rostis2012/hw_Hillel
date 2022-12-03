@@ -74,14 +74,14 @@ def get_class(raw_input):
         if count == 1:
             if float(raw_input):
                 return Circle(raw_input)
-            return None
+            return
         elif count == 2:
             a, b = raw_input.split()
             a = float(a)
             b = float(b)
             if a and b:
                 return Rectangle(a, b)
-            return None
+            return
         else:
             a, b, c = raw_input.split()
             a = float(a)
@@ -90,9 +90,9 @@ def get_class(raw_input):
             if a and b and c and a < c + b and b < a + c and c < a + b:
                 return Triangle(a, b, c)
             else:
-                return None
+                return
     else:
-        return None
+        return
 
 
 if __name__ == '__main__':

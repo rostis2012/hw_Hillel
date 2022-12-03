@@ -16,8 +16,8 @@ def super_trace(*, file=sys.stdout):
                 print(f'Именованых аргументов = {len(kwargs)}', file=file)
                 if len(kwargs):
                     # print(kwargs)
-                    for i in kwargs:
-                        print(f'Тип именованного аргумента = {type(kwargs[i])}, его значение {i} = {kwargs[i]}', file=file)
+                    for keys, values in kwargs.items():
+                        print(f'Тип именованного аргумента = {type(values)}, его значение {keys} = {values}', file=file)
                 res = func(*args, **kwargs)
                 if res:
                     print(f'Функция возвращает {len(res)} объектов', file=file)
