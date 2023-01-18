@@ -1,8 +1,8 @@
 import sys
 import math
 
-class Check_value:
-    "Дескриптор перевірки значення, яке повинно бути білше за 0"
+class NonNegative:
+    """Дескриптор перевірки значення, яке повинно бути білше за 0"""
 
     def __set_name__(self, owner, name):
         self.name = f'__{name}'
@@ -15,7 +15,7 @@ class Check_value:
         setattr(instance, self.name, value)
 
 class Figure:
-    "Абстрактний клас геометричної фігури"
+    """Абстрактний клас геометричної фігури"""
 
     def get_perimeter(self, *args):
         raise NotImplementedError
@@ -25,8 +25,8 @@ class Figure:
 
 
 class Circle(Figure):
-    "Клас Circle, наслідник класу Figure "
-    radius = Check_value()
+    """Клас Circle, наслідник класу Figure """
+    radius = NonNegative()
 
     def __init__(self, value):
         self.radius = float(value)
@@ -45,9 +45,9 @@ class Circle(Figure):
 
 
 class Rectangle(Figure):
-    "Клас Rectangle, наслідник класу Figure "
-    a = Check_value()
-    b = Check_value()
+    """Клас Rectangle, наслідник класу Figure """
+    a = NonNegative()
+    b = NonNegative()
 
     def __init__(self, *args):
         a_, b_ = args
@@ -68,10 +68,10 @@ class Rectangle(Figure):
 
 
 class Triangle(Figure):
-    "Клас Triangle, наслідник класу Figure "
-    a = Check_value()
-    b = Check_value()
-    c = Check_value()
+    """Клас Triangle, наслідник класу Figure """
+    a = NonNegative()
+    b = NonNegative()
+    c = NonNegative()
 
     def __init__(self, *args):
         a_, b_, c_ = args
